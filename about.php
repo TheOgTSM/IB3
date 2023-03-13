@@ -31,8 +31,8 @@
 
         <div class="col-4">
             <div class="btn-group float-end">
-                <button type="button" class="btn btn-primary float-end" id="inlog" value="RUN">Log in</button>
-                <button type="button" class="btn btn-primary float-end" id="signup" value="RUN">Sign Up</button>
+                <a href="login.php" type="button" class="btn btn-primary float-end" id="login">Log in</a>
+                <a href="signup.php" type="button" class="btn btn-primary float-end" id="signup">Sign Up</a>
             </div>
         </div>
     </div>
