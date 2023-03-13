@@ -43,7 +43,7 @@
 
 <!-- Main page -->
 <div class="main">
-    <h1>Instellingen</h1>
+    <h1>Map</h1>
 </div>
 
 </body>
