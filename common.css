@@ -1,0 +1,43 @@
+body {
+    overflow: hidden;
+}
+
+
+.sidenav{
+    margin-top: 40px;
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: dimgrey;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 6px 6px 20px;
+    font-size: 20px;
+    color: black;
+    display: block;
+}
+
+.topbar{
+    background-color: lightgray;
+    height: 40px;
+}
+
+.main_header {
+    margin-left: auto;
+    text-align: center;
+    color: black;
+    margin-top: 16px;
+    font-size: 64px;
+}
+
+.main{
+    margin-left: 160px;
+    height: 100%;
+    background-color: pink;
+    overflow-y: hidden;
+}

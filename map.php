@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
-    <title>Index</title>
-    <link href="index.css" rel="stylesheet" type="text/css">
+    <title>Map</title>
+    <link href="map.css" rel="stylesheet" type="text/css">
     <link href="common.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
@@ -11,9 +11,9 @@
 
 <!-- Sidebar -->
 <div class="sidenav">
-    <a href="map.php">Map</a>
-    <a href="settings.php">Settings</a>
-    <a href="about.php">About</a>
+    <a href="#">Map</a>
+    <a href="#">Settings</a>
+    <a href="#">About</a>
 </div>
 
 <!-- Top Bar-->
@@ -43,10 +43,8 @@
 
 <!-- Main page -->
 <div class="main">
-    <mark><h1 class="main_header">Dashboard Sensoren</h1></mark>
-    <p class="main_page_text">Gelieve in te loggen om het dashboard te kunnen raadplegen</p>
+    <h1>Instellingen</h1>
 </div>
 
 </body>
 </html>
-
