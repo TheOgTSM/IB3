@@ -1,0 +1,10 @@
+.form{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.errorMessage{
+    color: red;
+    margin-left: 200px;
+    margin-right: 200px;
+}

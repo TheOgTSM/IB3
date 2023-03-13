@@ -43,7 +43,21 @@
 
 <!-- Main page -->
 <div class="main">
-    <h1>Sign up</h1>
+    <h1 class="main_header">Sign up</h1>
+    <form class="form">
+        <div class="mb-3">
+            <label for="userEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="inputEmail">
+        </div>
+        <div class="mb-3">
+            <label for="userPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div id="visible" class="errorMessage">
+        <p>A user with this email address already exists, please log in</p>
+    </div>
 </div>
 
 </body>
