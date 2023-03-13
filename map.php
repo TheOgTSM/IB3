@@ -11,9 +11,9 @@
 
 <!-- Sidebar -->
 <div class="sidenav">
-    <a href="#">Map</a>
-    <a href="#">Settings</a>
-    <a href="#">About</a>
+    <a href="map.php">Map</a>
+    <a href="settings.php">Settings</a>
+    <a href="about.php">About</a>
 </div>
 
 <!-- Top Bar-->
