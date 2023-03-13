@@ -1,5 +1,11 @@
 <html lang="en">
+
+<?php
+session_start()
+?>
+
 <head>
+
     <title>Signup</title>
     <link href="signup.css" rel="stylesheet" type="text/css">
     <link href="common.css" rel="stylesheet" type="text/css">

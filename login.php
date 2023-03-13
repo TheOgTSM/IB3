@@ -1,5 +1,14 @@
 <html lang="en">
+
+<?php
+session_start();
+$input_username = "";
+$input_password = "";
+$server_output_password = "";
+?>
+
 <head>
+
     <title>Login</title>
     <link href="login.css" rel="stylesheet" type="text/css">
     <link href="common.css" rel="stylesheet" type="text/css">
@@ -43,7 +52,21 @@
 
 <!-- Main page -->
 <div class="main">
-    <h1>Log In</h1>
+    <h1 class="main_header">Log In</h1>
+    <form class="form">
+        <div class="mb-3">
+            <label for="userEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="inputEmail">
+        </div>
+        <div class="mb-3">
+            <label for="userPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div id="visible" class="errorMessage">
+        <p>Username and password do not match</p>
+    </div>
 </div>
 
 </body>

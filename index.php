@@ -43,7 +43,7 @@
 
 <!-- Main page -->
 <div class="main">
-    <mark><h1 class="main_header">Dashboard Sensoren</h1></mark>
+    <h1 class="main_header">Dashboard Sensoren</h1>
     <p class="main_page_text">Gelieve in te loggen om het dashboard te kunnen raadplegen</p>
 </div>
 
