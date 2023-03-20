@@ -1,9 +1,20 @@
-<html lang="en">
-
 <?php
-session_start()
+session_start();
+$servername = "localhost";
+$username = "wout";
+$password = "password";
+$dbname = 'userbase';
+
+$conn = new mysqli($servername, $username, $password,$dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+
 ?>
 
+<html lang="en">
 <head>
 
     <title>Signup</title>
@@ -59,8 +70,12 @@ session_start()
             <label for="userPassword" class="form-label">Password</label>
             <input type="password" class="form-control" id="inputPassword">
         </div>
+        <div>
+            <p>Please enter a password between 6 and 16 characters</p>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
     <div id="visible" class="errorMessage">
         <p>A user with this email address already exists, please log in</p>
     </div>
