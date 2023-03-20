@@ -1,17 +1,7 @@
 <?php
 session_start();
-$servername = "localhost";
-$username = "wout";
-$password = "password";
-$dbname = 'userbase';
-
-$conn = new mysqli($servername, $username, $password,$dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-
+// 0 when no query has been made, 1 if query was successful, 2 if query was not successful
+$wasSuccessful = 0;
 ?>
 
 <html lang="en">
@@ -63,11 +53,11 @@ echo "Connected successfully";
     <h1 class="main_header">Sign up</h1>
     <form class="form">
         <div class="mb-3">
-            <label for="userEmail" class="form-label">Email address</label>
+            <label for="inputEmail" class="form-label">Email address</label>
             <input type="email" class="form-control" id="inputEmail">
         </div>
         <div class="mb-3">
-            <label for="userPassword" class="form-label">Password</label>
+            <label for="inputPassword" class="form-label">Password</label>
             <input type="password" class="form-control" id="inputPassword">
         </div>
         <div>
@@ -76,9 +66,15 @@ echo "Connected successfully";
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <div id="visible" class="errorMessage">
-        <p>A user with this email address already exists, please log in</p>
-    </div>
+    <?php if($wasSuccessful = 1) : ?>
+        <div class = "succesMessage">
+            <p>New user was created</p>
+        </div>
+    <?php elseif ($wasSuccessful = 2) : ?>
+        <div id="visible" class="errorMessage">
+            <p>A user with this email address already exists, please log in</p>
+        </div>
+    <?php endif ?>
 </div>
 
 </body>
