@@ -66,11 +66,11 @@ $wasSuccessful = 0;
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <?php if($wasSuccessful = 1) : ?>
+    <?php if($wasSuccessful == 1) : ?>
         <div class = "succesMessage">
             <p>New user was created</p>
         </div>
-    <?php elseif ($wasSuccessful = 2) : ?>
+    <?php elseif ($wasSuccessful == 2) : ?>
         <div id="visible" class="errorMessage">
             <p>A user with this email address already exists, please log in</p>
         </div>
