@@ -8,8 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["inputEmail"];
     $password = $_POST["inputPassword"];
 
-    //$endMessage = SignUp($username, $password);
-    $endMessage = "test successfull";
+    $endMessage = SignUp($username, $password);
+    //$endMessage = "test successfull";
 }
 
 ?>
