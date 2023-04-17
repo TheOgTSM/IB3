@@ -19,7 +19,7 @@ $endMessage = ""; // message that will be displayed at end of the page
         $conn = new mysqli($servername, $username, $password, $dbname);
         $query = $conn->prepare("INSERT INTO users (email, passw) VALUES (?, ?)");
         $query->bind_param("ss", $email, $password);
-
+        echo $query;
         // check if connection with database was successfull;
         if ($conn->connect_error) {
             //die("Connection failed: " . $conn->connect_error);
