@@ -2,6 +2,7 @@
 session_start();
 //$_SESSION['username'] = "";
 
+    echo "script called";
     // if signup button is pressed, run the SignUp script in S_signUp.php
     if(isset($_POST['submit'])) {
         $email = $_POST["inputEmail"];
