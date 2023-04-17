@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'S_signUp.php';
 $endMessage = ""; // message that will be displayed at end of the page
 
 
@@ -8,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["inputEmail"];
     $password = $_POST["inputPassword"];
 
-    $endMessage = SignUp($username, $password);
+    $endMessage = test($username, $password);
     //$endMessage = "test successfull";
 }
 
