@@ -24,6 +24,7 @@ function SignUp($email, $password){
         // first check if entered email is a valid one
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // email is invalid, report to the user
+            echo $email;
             return "Please enter a valid email address";
         }
 
