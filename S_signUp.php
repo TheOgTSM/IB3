@@ -6,6 +6,7 @@ session_start();
     if(isset($_POST['submit'])) {
         $email = $_POST["inputEmail"];
         $password = $_POST["inputPassword"];
+        echo "email: ";
         echo $email;
 
         $servername = "localhost";
