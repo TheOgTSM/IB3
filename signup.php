@@ -1,7 +1,18 @@
 <?php
 session_start();
-// 0 when no query has been made, 1 if query was successful, 2 if query was not successful
-$wasSuccessful = 0;
+include SignUp();
+
+$endMessage = ""; // message that will be displayed at end of the page
+
+// if signup button is pressed, run the SignUp script in S_signUp.php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["inputEmail"];
+    $password = $_POST["inputPassword"];
+
+    $endMessage = SignUp($username, $password);
+}
+
+
 ?>
 
 <html lang="en">
@@ -66,15 +77,10 @@ $wasSuccessful = 0;
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <?php if($wasSuccessful == 1) : ?>
-        <div class = "succesMessage">
-            <p>New user was created</p>
-        </div>
-    <?php elseif ($wasSuccessful == 2) : ?>
-        <div id="visible" class="errorMessage">
-            <p>A user with this email address already exists, please log in</p>
-        </div>
-    <?php endif ?>
+    <p class="form">
+        <?php echo $endMessage ?>
+    </p>
+
 </div>
 
 </body>

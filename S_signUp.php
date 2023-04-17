@@ -1,34 +1,50 @@
 <?php
+session_start();
+//$_SESSION['username'] = "";
 
-$_SESSION['username'] = "";
+function SignUp($username, $password){
 
-$servername = "localhost";
-$username = "wout";
-$password = "password";
-$dbname = 'userbase';
+    $servername = "localhost";
+    $username = "wout";
+    $password = "password";
+    $dbname = 'userbase';
 
-$conn = new mysqli($servername, $username, $password,$dbname);
-$query = "INSERT INTO users (username, password) VALUES ($username, $password)";
+    $conn = new mysqli($servername, $username, $password,$dbname);
+    $query = "INSERT INTO users (username, password) VALUES ($username, $password)";
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["inputEmail"];
-    $password = $_POST["inputPassword"];
-
-    // code taken from https://stackoverflow.com/questions/18170227/handling-mysql-errors-in-php
-    $result = $conn->query($query);
-    if ($result) {
-        //if the query ran ok, do stuff
-
-    } else {
-        echo "Something has gone wrong! ";
-        //if it didn't, echo the error message
+    // check if connection with database was successfull;
+    if ($conn->connect_error) {
+        //die("Connection failed: " . $conn->connect_error);
+        return "there was an error connecting with the server";
     }
+
+    echo "Connected successfully";
+
+        // first check if entered email is a valid one
+        if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
+            // email is invalid, report to the user
+            return "Please enter a valid email address";
+        }
+
+
+        // template taken from https://stackoverflow.com/questions/18170227/handling-mysql-errors-in-php <==
+        $result = $conn->query($query);
+        if ($result) {
+
+            //if the query ran ok, do stuff
+            return "Account created successfully";
+
+            // log in with created user
+            $_SESSION['username'] = "";
+
+        } else {
+            //if it didn't, echo the error message
+            return "Something has gone wrong";
+        }
+        // ==> end of template
 }
+
 
 
 
