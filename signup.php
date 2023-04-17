@@ -4,8 +4,41 @@ include 'S_signUp.php';
 $endMessage = ""; // message that will be displayed at end of the page
 
 
-
 ?>
+
+// script to handle sign up submission
+<?php
+    if(isset($_POST['submitbutton'])){
+        $email = $_POST['inputEmail'];
+        $password = $_POST['inputPassword'];
+
+        $servername = "localhost";
+        $username = "wout";
+        $password = "password";
+        $dbname = 'userbase';
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        $query = "INSERT INTO users ($username, password) VALUES ($email, $password)";
+
+        // check if connection with database was successfull;
+        if ($conn->connect_error) {
+            //die("Connection failed: " . $conn->connect_error);
+            $endMessage = "there was an error connecting with the server";
+            $_SESSION['error'] = "database connection failed";
+        }
+        $endMessage = "Connected successfully";
+
+        // first check if entered email is a valid one
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // email is invalid, report to the user
+            echo $email;
+            $endMessage = "Please enter a valid email address";
+            $_SESSION['error'] = "Email Wrong";
+        }
+        $endMessage = "email correct";
+    }
+?>
+
 
 <html lang="en">
 <head>
@@ -72,19 +105,17 @@ $endMessage = ""; // message that will be displayed at end of the page
     -->
 
 
-    <form class="form" method="post" action="S_signUp.php">
-        Email: <input type="text" name="inputEmail">
-        password: <input type="text" name="inputPassword">
-        <input type="submit">
+    <form class="form" method="post" action="signup.php">
+        Email: <input type="email" name="inputEmail">
+        password: <input type="password" name="inputPassword">
+        <input type="submit" name="submitbutton">
     </form>
 
 
     <p class="form">
         test result:
         <?php
-        echo $_SESSION['signUpMessage'];
-        echo "\x08";
-        echo $_SESSION['error'];
+        echo $endMessage;
         ?>
     </p>
 

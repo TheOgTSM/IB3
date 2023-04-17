@@ -32,7 +32,6 @@ $_SESSION['signUpMessage'] = "";
             $endMessage = "there was an error connecting with the server";
             $_SESSION['error'] = "database connection failed";
         }
-
         echo "Connected successfully";
 
         // first check if entered email is a valid one
@@ -42,7 +41,7 @@ $_SESSION['signUpMessage'] = "";
             $endMessage = "Please enter a valid email address";
             $_SESSION['error'] = "Email Wrong";
         }
-        echo "after email check";
+        echo "email correct";
 
         // template taken from https://stackoverflow.com/questions/18170227/handling-mysql-errors-in-php <==
         $result = $conn->query($query);
