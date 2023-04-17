@@ -1,9 +1,9 @@
 <?php
 session_start();
-include SignUp();
-
 $endMessage = ""; // message that will be displayed at end of the page
 
+/*
+include SignUp();
 // if signup button is pressed, run the SignUp script in S_signUp.php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["inputEmail"];
@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $endMessage = SignUp($username, $password);
 }
-
+*/
 
 ?>
 
