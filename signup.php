@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //$username = $_POST["inputEmail"];
     //$password = $_POST["inputPassword"];
 
-    $endMessage = test();
+    //$endMessage = test();
 }
 
 ?>
@@ -78,7 +78,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <p class="form">
         test result:
-        <?php echo $endMessage ?>
+        <?php
+        $endMessage = test();
+        echo $endMessage ?>
     </p>
 
 </div>
