@@ -72,7 +72,7 @@ $endMessage = ""; // message that will be displayed at end of the page
     -->
 
 
-    <form class="form" method="post">
+    <form class="form" method="post" action="S_signUp.php">
         Email: <input type="email" name="inputEmail">
         password: <input type="password" name="inputPassword">
         <input type="submit">
