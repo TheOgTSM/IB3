@@ -83,6 +83,8 @@ $endMessage = ""; // message that will be displayed at end of the page
         test result:
         <?php
         echo $_SESSION['signUpMessage'];
+        echo "\b";
+        echo $_SESSION['error'];
         ?>
     </p>
 

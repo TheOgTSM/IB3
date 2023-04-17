@@ -1,16 +1,16 @@
 <?php
 session_start();
 //$_SESSION['username'] = "";
-$_SESSION['signUpMessage'] = "test";
+$_SESSION['signUpMessage'] = "";
 
-    echo "script called";
+    $_SESSION['error'] = "start of script";
     // if signup button is pressed, run the SignUp script in S_signUp.php
     if(isset($_POST['submit'])) {
+
+        $_SESSION['error'] = "master if";
+
         $email = $_POST["inputEmail"];
         $password = $_POST["inputPassword"];
-        echo "email: ";
-        echo $_POST['inputEmail'];
-        echo "\b";
 
         $servername = "localhost";
         $username = "wout";
@@ -25,6 +25,7 @@ $_SESSION['signUpMessage'] = "test";
         if ($conn->connect_error) {
             //die("Connection failed: " . $conn->connect_error);
             $endMessage = "there was an error connecting with the server";
+            $_SESSION['error'] = "database connection failed";
         }
 
         echo "Connected successfully";
@@ -34,6 +35,7 @@ $_SESSION['signUpMessage'] = "test";
             // email is invalid, report to the user
             echo $email;
             $endMessage = "Please enter a valid email address";
+            $_SESSION['error'] = "Email Wrong";
         }
         echo "after email check";
 
@@ -47,9 +49,11 @@ $_SESSION['signUpMessage'] = "test";
             // log in with created user
             $_SESSION['username'] = "";
 
+
         } else {
             //if it didn't, echo the error message
             $endMessage = "Something has gone wrong";
+            $_SESSION['error'] = "error with query";
         }
         // ==> end of template
         $_SESSION['signUpMessage'] = $endMessage;
