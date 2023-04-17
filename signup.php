@@ -1,13 +1,12 @@
 <?php
 session_start();
-include 'S_signUp.php';
 $endMessage = ""; // message that will be displayed at end of the page
 
 
 ?>
 
-// script to handle sign up submission
 <?php
+    // script to handle sign up submission
     if(isset($_POST['submitbutton'])){
         $email = $_POST['inputEmail'];
         $password = $_POST['inputPassword'];
