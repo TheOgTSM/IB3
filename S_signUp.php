@@ -27,7 +27,7 @@ function SignUp($email, $password){
             echo $email;
             return "Please enter a valid email address";
         }
-
+    echo "after email check";
 
         // template taken from https://stackoverflow.com/questions/18170227/handling-mysql-errors-in-php <==
         $result = $conn->query($query);
