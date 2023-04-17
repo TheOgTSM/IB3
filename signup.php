@@ -37,12 +37,11 @@ $endMessage = ""; // message that will be displayed at end of the page
         }
         $endMessage = "email correct";
 
-        $query->execute();
+        //$query->execute();
 
-        /*
         // query the database to see if user already exists, if not add it to the database
         // template taken from https://stackoverflow.com/questions/18170227/handling-mysql-errors-in-php <==
-        $result = $conn->query($query);
+        $result = $query->execute();
         if ($result) {
 
             //if the query ran ok, do stuff
@@ -56,7 +55,7 @@ $endMessage = ""; // message that will be displayed at end of the page
             $endMessage = "Something has gone wrong";
             $_SESSION['error'] = "error with query";
         }
-        */
+
     }
 ?>
 
