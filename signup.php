@@ -77,7 +77,10 @@ if(isset($_POST['submit'])) {
 
     <p class="form">
         test result:
-        <?php echo $endMessage ?>
+        <?php
+        echo $endMessage;
+        echo $email;
+        ?>
     </p>
 
 </div>
