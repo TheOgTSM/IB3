@@ -107,30 +107,29 @@ $endMessage = ""; // message that will be displayed at end of the page
 <!-- Main page -->
 <div class="main">
     <h1 class="main_header">Sign up</h1>
-    <!--
-    <form class="form" method="post" action="S_signUp.php">
+
+    <form class="form" method="post" action="signup.php">
         <div class="mb-3">
             <label for="inputEmail" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="inputEmail">
+            <input type="email" class="form-control" id="inputEmail" name="inputEmail">
         </div>
         <div class="mb-3">
             <label for="inputPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword">
+            <input type="password" class="form-control" id="inputPassword" name="inputPassword">
         </div>
         <div>
             <p>Please enter a password between 6 and 16 characters</p>
         </div>
-        <button type="submit" class="btn btn-primary" value="click" name="submit">Submit</button>
+        <button type="submit" class="btn btn-primary" value="click" name="submitbutton">Submit</button>
     </form>
-    -->
 
-
+    <!--
     <form class="form" method="post" action="signup.php">
         Email: <input type="email" name="inputEmail">
         password: <input type="password" name="inputPassword">
         <input type="submit" name="submitbutton">
     </form>
-
+    -->
 
     <p class="form">
         test result:
