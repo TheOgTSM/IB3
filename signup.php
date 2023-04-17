@@ -77,6 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 
     <p class="form">
+        test result:
         <?php echo $endMessage ?>
     </p>
 
