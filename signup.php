@@ -82,7 +82,7 @@ $endMessage = ""; // message that will be displayed at end of the page
     <p class="form">
         test result:
         <?php
-        echo $endMessage;
+        echo $_SESSION['signUpMessage'];
         ?>
     </p>
 
