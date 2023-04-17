@@ -23,19 +23,19 @@ $endMessage = ""; // message that will be displayed at end of the page
         // check if connection with database was successfull;
         if ($conn->connect_error) {
             //die("Connection failed: " . $conn->connect_error);
-            $endMessage .= "there was an error connecting with the server";
+            $endMessage = "there was an error connecting with the server";
             $_SESSION['error'] = "database connection failed";
         }
-        $endMessage .= "Connected successfully";
+        $endMessage = "Connected successfully";
 
         // first check if entered email is a valid one
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // email is invalid, report to the user
             echo $email;
-            $endMessage .= "Please enter a valid email address";
+            $endMessage = "Please enter a valid email address";
             $_SESSION['error'] = "Email Wrong";
         }
-        $endMessage .= "email correct";
+        $endMessage = "email correct";
 
 
         // query the database to see if user already exists, if not add it to the database
@@ -44,14 +44,14 @@ $endMessage = ""; // message that will be displayed at end of the page
         if ($result) {
 
             //if the query ran ok, do stuff
-            $endMessage .= "Account created successfully";
+            $endMessage = "Account created successfully";
 
             // log in with created user
             $_SESSION['username'] = "";
 
         } else {
             //if it didn't, echo the error message
-            $endMessage .= "Something has gone wrong";
+            $endMessage = "Something has gone wrong";
             $_SESSION['error'] = "error with query";
         }
     }
