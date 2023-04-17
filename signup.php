@@ -54,6 +54,7 @@ $endMessage = ""; // message that will be displayed at end of the page
 <!-- Main page -->
 <div class="main">
     <h1 class="main_header">Sign up</h1>
+    <!--
     <form class="form" method="post" action="S_signUp.php">
         <div class="mb-3">
             <label for="inputEmail" class="form-label">Email address</label>
@@ -68,12 +69,20 @@ $endMessage = ""; // message that will be displayed at end of the page
         </div>
         <button type="submit" class="btn btn-primary" value="click" name="submit">Submit</button>
     </form>
+    -->
+
+
+    <form class="form" method="post">
+        Email: <input type="email" name="inputEmail">
+        password: <input type="password" name="inputPassword">
+        <input type="submit">
+    </form>
+
 
     <p class="form">
         test result:
         <?php
         echo $endMessage;
-        echo $email;
         ?>
     </p>
 

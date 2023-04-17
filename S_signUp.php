@@ -8,7 +8,7 @@ session_start();
         $password = $_POST["inputPassword"];
         echo "email: ";
         echo $_POST['inputEmail'];
-        echo "\s";
+        echo "\b";
 
         $servername = "localhost";
         $username = "wout";
