@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["inputPassword"];
 
     //$endMessage = SignUp($username, $password);
-    $endMessage = test();
+    $endMessage = "test successfull";
 }
 
 ?>
