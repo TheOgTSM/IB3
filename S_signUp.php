@@ -5,6 +5,9 @@ $_SESSION['signUpMessage'] = "";
 
     $_SESSION['error'] = "start of script";
     echo "script start";
+    echo $_POST["inputEmail"];
+    echo $_POST["inputPassword"];
+
     // if signup button is pressed, run the SignUp script in S_signUp.php
     if(isset($_POST['submit'])) {
 
