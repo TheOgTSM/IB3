@@ -45,6 +45,7 @@ $_SESSION['signUpMessage'] = "";
         echo "email correct";
 
         $query->execute();
+        //test
 
         /*
         // template taken from https://stackoverflow.com/questions/18170227/handling-mysql-errors-in-php <==
