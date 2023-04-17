@@ -23,7 +23,8 @@ $_SESSION['signUpMessage'] = "";
         $dbname = 'userbase';
 
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $query = "INSERT INTO users (email, passw) VALUES ($email, $password)";
+        $query = $conn->prepare("INSERT INTO users (email, passw) VALUES (?, ?)");
+        $query->bind_param("ss", $email, $password);
 
 
         // check if connection with database was successfull;
