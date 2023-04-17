@@ -6,11 +6,10 @@ $endMessage = ""; // message that will be displayed at end of the page
 
 // if signup button is pressed, run the SignUp script in S_signUp.php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["inputEmail"];
-    $password = $_POST["inputPassword"];
+    //$username = $_POST["inputEmail"];
+    //$password = $_POST["inputPassword"];
 
-    $endMessage = test($username, $password);
-    //$endMessage = "test successfull";
+    $endMessage = test();
 }
 
 ?>
