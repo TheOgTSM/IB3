@@ -2,7 +2,7 @@
 session_start();
 //$_SESSION['username'] = "";
 
-function SignUp($username, $password){
+function SignUp($email, $password){
 
     $servername = "localhost";
     $username = "wout";
@@ -10,7 +10,7 @@ function SignUp($username, $password){
     $dbname = 'userbase';
 
     $conn = new mysqli($servername, $username, $password,$dbname);
-    $query = "INSERT INTO users (username, password) VALUES ($username, $password)";
+    $query = "INSERT INTO users ($username, password) VALUES ($email, $password)";
 
 
     // check if connection with database was successfull;
@@ -22,7 +22,7 @@ function SignUp($username, $password){
     echo "Connected successfully";
 
         // first check if entered email is a valid one
-        if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // email is invalid, report to the user
             return "Please enter a valid email address";
         }
