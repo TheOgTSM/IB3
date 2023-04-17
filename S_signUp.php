@@ -1,6 +1,7 @@
 <?php
 session_start();
 //$_SESSION['username'] = "";
+$_SESSION['signUpMessage'] = "";
 
     echo "script called";
     // if signup button is pressed, run the SignUp script in S_signUp.php
@@ -23,7 +24,7 @@ session_start();
         // check if connection with database was successfull;
         if ($conn->connect_error) {
             //die("Connection failed: " . $conn->connect_error);
-            return "there was an error connecting with the server";
+            $endMessage = "there was an error connecting with the server";
         }
 
         echo "Connected successfully";
@@ -32,7 +33,7 @@ session_start();
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // email is invalid, report to the user
             echo $email;
-            return "Please enter a valid email address";
+            $endMessage = "Please enter a valid email address";
         }
         echo "after email check";
 
@@ -41,21 +42,17 @@ session_start();
         if ($result) {
 
             //if the query ran ok, do stuff
-            return "Account created successfully";
+            $endMessage = "Account created successfully";
 
             // log in with created user
             $_SESSION['username'] = "";
 
         } else {
             //if it didn't, echo the error message
-            return "Something has gone wrong";
+            $endMessage = "Something has gone wrong";
         }
         // ==> end of template
+        $_SESSION['signUpMessage'] = $endMessage;
     }
-
-function test(){
-    return "test successfull";
-}
-
 
 
