@@ -53,14 +53,12 @@ $_SESSION['signUpMessage'] = "";
             // log in with created user
             $_SESSION['username'] = "";
 
-
         } else {
             //if it didn't, echo the error message
             $endMessage = "Something has gone wrong";
             $_SESSION['error'] = "error with query";
         }
         // ==> end of template
-        $_SESSION['signUpMessage'] = $endMessage;
     }
 
 
