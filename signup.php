@@ -4,13 +4,7 @@ include 'S_signUp.php';
 $endMessage = ""; // message that will be displayed at end of the page
 
 
-// if signup button is pressed, run the SignUp script in S_signUp.php
-if(isset($_POST['submit'])) {
-    $email = $_POST["inputEmail"];
-    $password = $_POST["inputPassword"];
 
-    $endMessage = SignUp($email, $password);
-}
 ?>
 
 <html lang="en">
@@ -60,7 +54,7 @@ if(isset($_POST['submit'])) {
 <!-- Main page -->
 <div class="main">
     <h1 class="main_header">Sign up</h1>
-    <form class="form" method="post" action="signup.php">
+    <form class="form" method="post" action="S_signUp.php">
         <div class="mb-3">
             <label for="inputEmail" class="form-label">Email address</label>
             <input type="email" class="form-control" id="inputEmail">

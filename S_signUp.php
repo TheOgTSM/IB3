@@ -2,24 +2,28 @@
 session_start();
 //$_SESSION['username'] = "";
 
-function SignUp($email, $password){
+    // if signup button is pressed, run the SignUp script in S_signUp.php
+    if(isset($_POST['submit'])) {
+        $email = $_POST["inputEmail"];
+        $password = $_POST["inputPassword"];
+        echo $email;
 
-    $servername = "localhost";
-    $username = "wout";
-    $password = "password";
-    $dbname = 'userbase';
+        $servername = "localhost";
+        $username = "wout";
+        $password = "password";
+        $dbname = 'userbase';
 
-    $conn = new mysqli($servername, $username, $password,$dbname);
-    $query = "INSERT INTO users ($username, password) VALUES ($email, $password)";
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        $query = "INSERT INTO users ($username, password) VALUES ($email, $password)";
 
 
-    // check if connection with database was successfull;
-    if ($conn->connect_error) {
-        //die("Connection failed: " . $conn->connect_error);
-        return "there was an error connecting with the server";
-    }
+        // check if connection with database was successfull;
+        if ($conn->connect_error) {
+            //die("Connection failed: " . $conn->connect_error);
+            return "there was an error connecting with the server";
+        }
 
-    echo "Connected successfully";
+        echo "Connected successfully";
 
         // first check if entered email is a valid one
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -27,7 +31,7 @@ function SignUp($email, $password){
             echo $email;
             return "Please enter a valid email address";
         }
-    echo "after email check";
+        echo "after email check";
 
         // template taken from https://stackoverflow.com/questions/18170227/handling-mysql-errors-in-php <==
         $result = $conn->query($query);
@@ -44,7 +48,7 @@ function SignUp($email, $password){
             return "Something has gone wrong";
         }
         // ==> end of template
-}
+    }
 
 function test(){
     return "test successfull";
