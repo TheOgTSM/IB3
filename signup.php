@@ -5,7 +5,13 @@ $endMessage = ""; // message that will be displayed at end of the page
 
 
 // if signup button is pressed, run the SignUp script in S_signUp.php
+//if ($_SERVER["REQUEST_METHOD"] == "submit") {
+if(isset($_POST['submit'])) {
+    //$username = $_POST["inputEmail"];
+    //$password = $_POST["inputPassword"];
 
+    $endMessage = test();
+}
 ?>
 
 <html lang="en">
@@ -55,7 +61,7 @@ $endMessage = ""; // message that will be displayed at end of the page
 <!-- Main page -->
 <div class="main">
     <h1 class="main_header">Sign up</h1>
-    <form class="form">
+    <form class="form" method="post" action="signup.php">
         <div class="mb-3">
             <label for="inputEmail" class="form-label">Email address</label>
             <input type="email" class="form-control" id="inputEmail">
@@ -67,20 +73,12 @@ $endMessage = ""; // message that will be displayed at end of the page
         <div>
             <p>Please enter a password between 6 and 16 characters</p>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" value="click" name="submit">Submit</button>
     </form>
 
     <p class="form">
         test result:
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            //$username = $_POST["inputEmail"];
-            //$password = $_POST["inputPassword"];
-
-            $endMessage = test();
-        }
-
-        echo $endMessage ?>
+        <?php echo $endMessage ?>
     </p>
 
 </div>
