@@ -19,7 +19,7 @@ $endMessage = ""; // message that will be displayed at end of the page
         $conn = new mysqli($servername, $username, $password, $dbname);
         $query = $conn->prepare("INSERT INTO users (email, passw) VALUES (?, ?)");
         $query->bind_param("ss", $email, $password);
-        echo $query;
+
         // check if connection with database was successfull;
         if ($conn->connect_error) {
             //die("Connection failed: " . $conn->connect_error);
@@ -37,7 +37,9 @@ $endMessage = ""; // message that will be displayed at end of the page
         }
         $endMessage = "email correct";
 
+        $query->execute();
 
+        /*
         // query the database to see if user already exists, if not add it to the database
         // template taken from https://stackoverflow.com/questions/18170227/handling-mysql-errors-in-php <==
         $result = $conn->query($query);
@@ -54,6 +56,7 @@ $endMessage = ""; // message that will be displayed at end of the page
             $endMessage = "Something has gone wrong";
             $_SESSION['error'] = "error with query";
         }
+        */
     }
 ?>
 
