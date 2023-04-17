@@ -1,7 +1,7 @@
 <?php
 session_start();
 //$_SESSION['username'] = "";
-$_SESSION['signUpMessage'] = "";
+$_SESSION['signUpMessage'] = "test";
 
     echo "script called";
     // if signup button is pressed, run the SignUp script in S_signUp.php
