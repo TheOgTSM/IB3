@@ -44,6 +44,9 @@ $_SESSION['signUpMessage'] = "";
         }
         echo "email correct";
 
+        $query->execute();
+
+        /*
         // template taken from https://stackoverflow.com/questions/18170227/handling-mysql-errors-in-php <==
         $result = $conn->query($query);
         if ($result) {
@@ -60,6 +63,7 @@ $_SESSION['signUpMessage'] = "";
             $_SESSION['error'] = "error with query";
         }
         // ==> end of template
+        */
     }
 
 
