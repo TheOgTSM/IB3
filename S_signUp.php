@@ -45,7 +45,9 @@ function SignUp($username, $password){
         // ==> end of template
 }
 
-
+function test(){
+    return "test successfull";
+}
 
 
 
