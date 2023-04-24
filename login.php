@@ -36,13 +36,14 @@ if (isset($_POST['submitbutton'])){
     $result = $conn->query($query);
     if($result == $enteredPassword){
         //$endMessage = "You have been successfully logged in  with password" . $result . $enteredPassword;
-        $endMessage = "databsase password: " . $result . " enteredPassword: " . $enteredPassword;
+        $endMessage = "succes databsase password: " . $result . " enteredPassword: " . $enteredPassword;
         $_SESSION['email'] = $email;
         //header("Location: /index.php");
 
     }
     else{
-        $endMessage = "Email and password did not match" . $result;
+        $endMessage = "Email and password did not match " . $result . "databsase password: " . $result . " enteredPassword: " . $enteredPassword;
+
     }
 
 
