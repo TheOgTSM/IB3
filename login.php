@@ -33,7 +33,7 @@ if (isset($_POST['submitbutton'])){
     }
     $endMessage = "email correct";
 
-    $result = $query->execute();
+    $result = $conn->query($query);
     if($result == $enteredPassword){
         //$endMessage = "You have been successfully logged in  with password" . $result . $enteredPassword;
         $endMessage = "databsase password: " . $result . " enteredPassword: " . $enteredPassword;
