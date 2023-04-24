@@ -36,6 +36,7 @@ if (isset($_POST['submitbutton'])){
     if($result = $password){
         $endMessage = "You have been successfully logged in";
         $_SESSION['email'] = $email;
+        header("Location: /index.php");
     }
     else{
         $endMessage = "Email and password did not match";

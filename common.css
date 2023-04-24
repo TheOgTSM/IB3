@@ -11,7 +11,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: dimgrey;
+    background-color: whitesmoke;
     padding-top: 20px;
 }
 
@@ -23,7 +23,7 @@ body {
 }
 
 .topbar{
-    background-color: lightgray;
+    background-color: grey;
     height: 40px;
 }
 
@@ -38,6 +38,6 @@ body {
 .main{
     margin-left: 160px;
     height: 100%;
-    background-color: pink;
+    background-color: whitesmoke;
     overflow-y: hidden;
 }
