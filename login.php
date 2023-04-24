@@ -48,7 +48,7 @@ if (isset($_POST['submitbutton'])){
 
     }
     else{
-        $endMessage = "Email and password did not match, databsase password: " . $dbPassword . "     enteredPassword: " . $enteredPassword;
+        $endMessage = "Email and password did not match, databsase password: " . $dbPassword . "     enteredPassword: " . $enteredPassword . " vs1";
 
     }
 
