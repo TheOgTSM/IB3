@@ -96,17 +96,18 @@ if (isset($_POST['submitbutton'])){
 <!-- Main page -->
 <div class="main">
     <h1 class="main_header">Log In</h1>
-    <form class="form">
+    <form class="form" method="post" action="signup.php">
         <div class="mb-3">
-            <label for="userEmail" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="inputEmail">
+            <label for="inputEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="inputEmail" name="inputEmail">
         </div>
         <div class="mb-3">
-            <label for="userPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword" name="inputPassword">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" value="click" name="submitbutton">Submit</button>
     </form>
+
     <div id="visible" class="errorMessage">
         <p> <?php echo $endMessage ?> </p>
     </div>
