@@ -14,8 +14,8 @@ if (isset($_POST['submitbutton'])){
     $dbname = 'userbase';
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    $query = $conn->prepare("SELECT passw FROM users WHERE email = '?'");
-    $query->bind_param("s", $email);
+    //$query = $conn->prepare("SELECT passw FROM users WHERE email = '?'");
+    //$query->bind_param("s", $email);
 
 // check if connection with database was successful;
     if ($conn->connect_error) {
@@ -36,7 +36,9 @@ if (isset($_POST['submitbutton'])){
 
 
     // fetch password from database
-    $result = $conn->query($query);
+    $querytext = "SELECT passw FROM users WHERE email = '$email'";
+
+    $result = mysqli_query($querytext);
     $row = mysqli_fetch_assoc($result);
     $dbPassword = $row['passw'];
 
@@ -48,7 +50,7 @@ if (isset($_POST['submitbutton'])){
 
     }
     else{
-        $endMessage = "Email and password did not match, databsase password: " . $dbPassword . "     enteredPassword: " . $enteredPassword . " vs1";
+        $endMessage = "Email and password did not match, databsase password: " . $dbPassword . " enteredPassword: " . $enteredPassword . " vs1";
 
     }
 
