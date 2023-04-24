@@ -2,6 +2,7 @@
 
 <?php
 session_start();
+$endMessage = "";
 
 if (isset($_POST['submitbutton'])){
     $email = $_POST['inputEmail'];
