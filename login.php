@@ -30,6 +30,7 @@ if (isset($_POST['submitbutton'])){
         echo $email;
         $endMessage = "Please enter a valid email address";
         $_SESSION['error'] = "Email Wrong";
+        return;
     }
     $endMessage = "email correct";
 
@@ -37,8 +38,7 @@ if (isset($_POST['submitbutton'])){
     // fetch password from database
     $result = $conn->query($query);
     $row = mysqli_fetch_assoc($result);
-    $dbPassword = $row['password'];
-
+    $dbPassword = $row['passw'];
 
     if($enteredPassword == $dbPassword){
         //$endMessage = "You have been successfully logged in  with password" . $result . $enteredPassword;
