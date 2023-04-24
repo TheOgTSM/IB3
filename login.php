@@ -39,7 +39,7 @@ if (isset($_POST['submitbutton'])){
     $queryText = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
     $result = mysqli_query($queryText);
     while($row = mysqli_fetch_assoc($result)) {
-        $fromID = $row['passw'];
+        $dbPassword = $row['passw'];
     }
 
     if($enteredPassword == $dbPassword){
