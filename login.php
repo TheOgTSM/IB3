@@ -39,7 +39,7 @@ if (isset($_POST['submitbutton'])){
         header("Location: /index.php");
     }
     else{
-        $endMessage = "Email and password did not match";
+        $endMessage = "Email and password did not match" . $result;
     }
 
 
