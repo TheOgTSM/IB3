@@ -12,10 +12,7 @@
 
 <?php
 
-header("Location: /login.php");
-
-
-if($_SESSION['email'] = Null){
+if(!isset($_SESSION['email'])){
     header("Location: /login.php");
 }
 
