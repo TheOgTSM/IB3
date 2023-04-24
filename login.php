@@ -33,8 +33,14 @@ if (isset($_POST['submitbutton'])){
     }
     $endMessage = "email correct";
 
+
+    // fetch password from database
     $result = $conn->query($query);
-    if($result == $enteredPassword){
+    $row = mysqli_fetch_assoc($result);
+    $dbPassword = $row['password'];
+
+
+    if($enteredPassword == $dbPassword){
         //$endMessage = "You have been successfully logged in  with password" . $result . $enteredPassword;
         $endMessage = "succes databsase password: " . $result . " enteredPassword: " . $enteredPassword;
         $_SESSION['email'] = $email;
