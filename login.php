@@ -2,9 +2,50 @@
 
 <?php
 session_start();
-$input_username = "";
-$input_password = "";
-$server_output_password = "";
+
+if (isset($_POST['submitbutton'])){
+    $email = $_POST['inputEmail'];
+    $password = $_POST['inputPassword'];
+
+    $servername = "localhost";
+    $username = "wout";
+    $password = "password";
+    $dbname = 'userbase';
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    $query = $conn->prepare("SELECT passw FROM users WHERE email = '?'");
+    $query->bind_param("s", $email);
+
+// check if connection with database was successful;
+    if ($conn->connect_error) {
+        $endMessage = "there was an error connecting with the server";
+        $_SESSION['error'] = "database connection failed";
+    }
+    $endMessage = "Connected successfully";
+
+    // first check if entered email is a valid one
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        // email is invalid, report to the user
+        echo $email;
+        $endMessage = "Please enter a valid email address";
+        $_SESSION['error'] = "Email Wrong";
+    }
+    $endMessage = "email correct";
+
+    $result = $query->execute();
+    if($result = $password){
+        $endMessage = "You have been successfully logged in";
+        $_SESSION['loginEmail'] = $email;
+    }
+    else{
+        $endMessage = "Email and password did not match";
+    }
+
+
+
+}
+
+
 ?>
 
 <head>

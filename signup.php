@@ -20,7 +20,7 @@ $endMessage = ""; // message that will be displayed at end of the page
         $query = $conn->prepare("INSERT INTO users (email, passw) VALUES (?, ?)");
         $query->bind_param("ss", $email, $password);
 
-        // check if connection with database was successfull;
+        // check if connection with database was successful;
         if ($conn->connect_error) {
             //die("Connection failed: " . $conn->connect_error);
             $endMessage = "there was an error connecting with the server";
@@ -36,8 +36,6 @@ $endMessage = ""; // message that will be displayed at end of the page
             $_SESSION['error'] = "Email Wrong";
         }
         $endMessage = "email correct";
-
-        //$query->execute();
 
         // query the database to see if user already exists, if not add it to the database
         // template taken from https://stackoverflow.com/questions/18170227/handling-mysql-errors-in-php <==
@@ -123,7 +121,7 @@ $endMessage = ""; // message that will be displayed at end of the page
         <button type="submit" class="btn btn-primary" value="click" name="submitbutton">Submit</button>
     </form>
 
-    <!--
+    <!-- simple form for testing purposes
     <form class="form" method="post" action="signup.php">
         Email: <input type="email" name="inputEmail">
         password: <input type="password" name="inputPassword">
@@ -132,7 +130,6 @@ $endMessage = ""; // message that will be displayed at end of the page
     -->
 
     <p class="form">
-        test result:
         <?php
         echo $endMessage;
         ?>
