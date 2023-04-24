@@ -108,7 +108,7 @@ if (isset($_POST['submitbutton'])){
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <div id="visible" class="errorMessage">
-        <p>Username and password do not match</p>
+        <p> <?php $endMessage ?> </p>
     </div>
 </div>
 
