@@ -35,7 +35,7 @@ if (isset($_POST['submitbutton'])){
 
     $result = $query->execute();
     if($result == $enteredPassword){
-        $endMessage = "You have been successfully logged in  with password" . $enteredPassword;
+        $endMessage = "You have been successfully logged in  with password" . $result . $enteredPassword;
         $_SESSION['email'] = $email;
         //header("Location: /index.php");
 
