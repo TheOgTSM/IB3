@@ -36,11 +36,11 @@ if (isset($_POST['submitbutton'])){
 
 
     // fetch password from database
-    $querytext = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
-
-    $result = mysqli_query($querytext);
-    $row = mysqli_fetch_assoc($result);
-    $dbPassword = $row['passw'];
+    $queryText = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
+    $result = mysqli_query($queryText);
+    while($row = mysqli_fetch_assoc($result)) {
+        $fromID = $row['passw'];
+    }
 
     if($enteredPassword == $dbPassword){
         //$endMessage = "You have been successfully logged in";
