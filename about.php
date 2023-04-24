@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    // redirect to index page if not logged in
+    if($_SESSION['email'] = Null){
+        header("Location: /login.php");
+    }
+
+?>
+
 <html lang="en">
 <head>
     <title>About</title>

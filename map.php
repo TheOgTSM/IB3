@@ -1,3 +1,12 @@
+<?php
+
+    if($_SESSION['email'] = Null){
+        header("Location: /login.php");
+    }
+
+?>
+
+
 <html lang="en">
 <head>
     <title>Map</title>
