@@ -96,7 +96,7 @@ if (isset($_POST['submitbutton'])){
 <!-- Main page -->
 <div class="main">
     <h1 class="main_header">Log In</h1>
-    <form class="form" method="post" action="signup.php">
+    <form class="form" method="post" action="login.php">
         <div class="mb-3">
             <label for="inputEmail" class="form-label">Email address</label>
             <input type="email" class="form-control" id="inputEmail" name="inputEmail">
