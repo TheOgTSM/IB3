@@ -12,6 +12,9 @@
 
 <?php
 
+header("Location: /login.php");
+
+
 if($_SESSION['email'] = Null){
     header("Location: /login.php");
 }
