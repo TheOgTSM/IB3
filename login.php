@@ -36,7 +36,7 @@ if (isset($_POST['submitbutton'])){
 
 
     // fetch password from database
-    $querytext = "SELECT passw FROM users WHERE email = '$email'";
+    $querytext = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
 
     $result = mysqli_query($querytext);
     $row = mysqli_fetch_assoc($result);
