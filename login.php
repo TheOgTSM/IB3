@@ -40,19 +40,21 @@ if (isset($_POST['submitbutton'])){
     $result = mysqli_query($queryText);
     while($row = mysqli_fetch_assoc($result)) {
         $dbPassword = $row['passw'];
+
+        if($enteredPassword == $dbPassword){
+            //$endMessage = "You have been successfully logged in";
+            $endMessage = "succes databsase password: " . $result . " enteredPassword: " . $enteredPassword;
+            $_SESSION['email'] = $email;
+            //header("Location: /index.php");
+
+        }
+        else{
+            $endMessage = "Email and password did not match, databsase password: " . $dbPassword . " enteredPassword: " . $enteredPassword . " vs1";
+
+        }
     }
 
-    if($enteredPassword == $dbPassword){
-        //$endMessage = "You have been successfully logged in";
-        $endMessage = "succes databsase password: " . $result . " enteredPassword: " . $enteredPassword;
-        $_SESSION['email'] = $email;
-        //header("Location: /index.php");
 
-    }
-    else{
-        $endMessage = "Email and password did not match, databsase password: " . $dbPassword . " enteredPassword: " . $enteredPassword . " vs1";
-
-    }
 
 
 
