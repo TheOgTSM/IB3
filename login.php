@@ -82,15 +82,12 @@ if (isset($_POST['submitbutton'])){
 
 <!-- Top Bar-->
 <div class="topbar">
-    <div class="row p-1">
+    <div class="row align-items-center">
         <div class="col-4">
             <a href="index.php" type="button" class="btn btn-primary float-lg-start" id="home" >Home</a>
         </div>
 
-        <div class="col-4 d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
+        <div class="col-4">
         </div>
 
         <div class="col-4">
@@ -100,10 +97,7 @@ if (isset($_POST['submitbutton'])){
             </div>
         </div>
     </div>
-
-
 </div>
-
 
 <!-- Main page -->
 <div class="main">

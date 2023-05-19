@@ -79,15 +79,12 @@ $endMessage = ""; // message that will be displayed at end of the page
 
 <!-- Top Bar-->
 <div class="topbar">
-    <div class="row p-1">
+    <div class="row align-items-center">
         <div class="col-4">
             <a href="index.php" type="button" class="btn btn-primary float-lg-start" id="home" >Home</a>
         </div>
 
-        <div class="col-4 d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
+        <div class="col-4">
         </div>
 
         <div class="col-4">
@@ -97,8 +94,6 @@ $endMessage = ""; // message that will be displayed at end of the page
             </div>
         </div>
     </div>
-
-
 </div>
 
 

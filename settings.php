@@ -15,9 +15,9 @@
 
 <?php
 
-if(!isset($_SESSION['email'])){
-    header("Location: /login.php");
-}
+//if(!isset($_SESSION['email'])){
+//    header("Location: /login.php");
+//}
 
 ?>
 
@@ -32,15 +32,12 @@ if(!isset($_SESSION['email'])){
 
 <!-- Top Bar-->
 <div class="topbar">
-    <div class="row p-1">
+    <div class="row align-items-center">
         <div class="col-4">
             <a href="index.php" type="button" class="btn btn-primary float-lg-start" id="home" >Home</a>
         </div>
 
-        <div class="col-4 d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
+        <div class="col-4">
         </div>
 
         <div class="col-4">
@@ -50,8 +47,6 @@ if(!isset($_SESSION['email'])){
             </div>
         </div>
     </div>
-
-
 </div>
 
 
