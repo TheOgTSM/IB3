@@ -31,7 +31,7 @@ $endMessage = ""; // message that will be displayed at end of the page
         // first check if entered email is a valid one
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // email is invalid, report to the user
-            echo $email;
+            //echo $email;
             $endMessage = "Please enter a valid email address";
             $_SESSION['error'] = "Email Wrong";
         }
