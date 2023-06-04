@@ -49,6 +49,12 @@
 <!-- Main page -->
 <div class="main">
     <h1>About</h1>
+    <p>
+
+        Dashboard gemaakt door Felix D'Hoore en Wout Hallez,
+        voor het vakProject Elektronica-ICT: Opdracht
+
+    </p>
 </div>
 
 </body>

@@ -36,16 +36,15 @@ $_SESSION['signUpMessage'] = "";
         echo "Connected successfully";
 
         // first check if entered email is a valid one
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL) && str_contains($email, '@kuleuven.be')) {
             // email is invalid, report to the user
             echo $email;
-            $endMessage = "Please enter a valid email address";
+            $endMessage = "Please enter a valid university email address";
             $_SESSION['error'] = "Email Wrong";
         }
         echo "email correct";
 
         $query->execute();
-        //test
 
         /*
         // template taken from https://stackoverflow.com/questions/18170227/handling-mysql-errors-in-php <==

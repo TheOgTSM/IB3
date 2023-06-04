@@ -15,9 +15,9 @@
 
 <?php
 
-//if(!isset($_SESSION['email'])){
-//    header("Location: /login.php");
-//}
+if(!isset($_SESSION['email'])){
+    header("Location: /login.php");
+}
 
 ?>
 
@@ -53,6 +53,7 @@
 <!-- Main page -->
 <div class="main">
     <h1>Instellingen</h1>
+    <p>Not yet implemented</p>
 </div>
 
 </body>
